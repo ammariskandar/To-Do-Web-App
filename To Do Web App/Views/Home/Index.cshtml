@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mx-2 mb-2 row justify-content-md-center">
+    <div class="col"></div>
+    <div class="col-md-7">
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">The application was written in C# using the following frameworks and technologies:</p>
+                    <ul class="card-text">
+                        <li>ASP.NET Core MVC</li>
+                        <li>Bootstrap UI components</li>
+                        <li>SQLite db</li>
+                        <li>Entity Core ORM</li>
+                        <li>Identity Core + cookies/sessions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text my-2">This is a simple To Do Item manager web app. After creating your own profile, you can log in with your password and username to manage your profile and todo items.</p>
+                    <p class="card-text my-2">You can execute CRUD operations to add, modify, remove and display To Do items.</p>
+                    @if(!User.Identity.IsAuthenticated) 
+                    {
+                        <p>Would you like to try it out?</p>
+                        <a class="btn btn-primary my-2" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        <span class="m-2">or</span>
+                        <a class="btn btn-secondary my-2" asp-area="Identity" asp-page="/Account/Register">Sign Up</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
